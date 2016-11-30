@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import re
 from datetime import datetime, tzinfo, timedelta
 
@@ -286,3 +287,6 @@ def make_parser(format_string):
 
 def get_fieldnames(format_string):
     return Parser(format_string).names
+=======
+
+>>>>>>> e0511addb6b028a2367fcac6ff2dd77af649eef6
