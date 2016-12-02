@@ -1,12 +1,11 @@
-<<<<<<< HEAD
+#! /usr/bin/env python
+# coding: utf-8
+
 import re
+import user_agents
 from datetime import datetime, tzinfo, timedelta
 
-import user_agents
-
-
 class ApacheLogParserException(Exception): pass
-
 
 class LineDoesntMatchException(ApacheLogParserException):
     def __init__(self, log_line=None, regex=None, *args, **kwargs):
@@ -287,6 +286,8 @@ def make_parser(format_string):
 
 def get_fieldnames(format_string):
     return Parser(format_string).names
-=======
 
->>>>>>> e0511addb6b028a2367fcac6ff2dd77af649eef6
+if __name__ == "__main__":
+    line_parser = make_parser('''%h %l %u %t \"%r\" %>s %O \"%{Referer}i\" \"%{User-Agent}i\"''')
+
+
